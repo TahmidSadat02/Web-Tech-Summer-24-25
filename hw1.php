@@ -153,8 +153,7 @@
             padding:5px;
         }
 
-
-    </sBank>
+        </style>
 
   
 
