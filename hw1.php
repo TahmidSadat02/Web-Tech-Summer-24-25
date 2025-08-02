@@ -87,7 +87,7 @@
         <tr>
             <td>
                 Occupation: <br>
-                <input type placeholder="Enter your occupation here..."size= 60%>
+                <input type placeholder= "Enter your occupation here..." size= 60%>
             </td>
         </tr>
 
@@ -193,8 +193,13 @@
             margin-bottom: 20px;
         }
 
-        
-
+        input type="text"{
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
         
 
         </style>
