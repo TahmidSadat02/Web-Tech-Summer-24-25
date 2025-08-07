@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Clinic Patient Registration</h1> <br>
+        <form id="registrationForm" onsubmit="return handleForm()">
+            <div class="form">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname">
+                <p id="nameError"> </p>
+            </div>
+
+            <div class="form">
+                <label for="age">Age:</label>
+                <input type="number" id="age">
+                <p id="ageError"></p>
+            </div>
+
+            <div class="form">
+                <label for="number">Phone Number:</label>
+                <input type="number" id="number">
+                <p id="numError"></p>
+
+            </div>
+
+            <div class="form">
+                <label for="email">Email</label>
+                <input type="email" id="email">
+                <p id="emailError"></p>
+            </div>
+
+            <div class="form">
+                <label for="insurance">Insurance Provider</label>
+                <select name="insurance" id="insurance">
+                    <option value="" disable select>Select</option>
+                    <option value="option B">Option A</option>
+                    <option value="option C">Option B</option>
+                    <option value="option D">Option C</option>
+                </select>
+                <p id="InsError"></p>
+            </div>
+
+            <div class="form">
+                <label for="policynumber">Policy Number</label>
+                <input type="text" id="policynumber">
+                <p id="policyError"></p>
+            </div>
+
+            <h2>Additional Information</h2>
+
+            <div class="form">
+                <label for="username">User Name:</label>
+                <input type="text" id="username">
+                <p id="userError"></p>
+            </div>
+
+            <div class="form">
+                <label for="password">Password:</label>
+                <input type="password" id="password">
+                <p id="passError"></p>
+            </div>
+
+            <div class="form">
+                <label for="confirmpassword">Confirm Password:</label>
+                <input type="password" id="confirmpassword">
+                <p id="confirmError"></p>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
