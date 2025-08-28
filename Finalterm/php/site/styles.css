@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f5f7;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #c8d8e4;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container h1, p {
+    text-align: center;
+    color: #2b6777;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #2b6777;
+    border-radius: 5px;
+    outline: none;
+    display: block;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.gender-field {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.gender-field label {
+    display: block;
+    margin-bottom: 5px;
+    color: #2b6777;
+}
+
+select {
+    background-color: white;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #2b6777;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1e4b55;
+}
