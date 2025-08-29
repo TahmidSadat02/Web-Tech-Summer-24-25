@@ -15,12 +15,11 @@
             
             <input type="number" id="age" name="age" placeholder="Enter your age..." min="1" max="120" required>
             
-            <input type="number" id="mobile" name="mobile" placeholder="Enter your mobile number..." pattern="[0-9]{11}" required>
+            <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile number..." pattern="[0-9]{11}" required>
             
             <input type="email" id="email" name="email" placeholder="Enter your Email..." required>
             
             <div class="gender-field">
-                <!-- <label>Gender:</label> -->
                 <select name="gender" id="gender" required>
                     <option value="">Select Gender</option>
                     <option value="male">Male</option>
@@ -29,16 +28,47 @@
                 </select>
             </div>
             
-            <!-- <input type="password" id="password" name="password" placeholder="Enter your password..." required> -->
-            
             <textarea name="desc" id="desc" placeholder="You can tell us about any other info here..."></textarea>
 
             <input class="btn" type="submit" value="Submit">
             <input class="btn" type="reset" value="Reset">
         </form>
 
-    </div>
+    <?php 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $server = "localhost";
+        $username = "root";
+        $password = ""; // no space here
+        $database = "web_form"; 
 
-    <script src="script.js"></script>
+        // Create connection
+        $con = mysqli_connect($server, $username, $password, $database);
+
+        if(!$con){
+            die("Connection to this database failed: ". mysqli_connect_error());
+        }
+
+        // Collect form data safely
+        $name = mysqli_real_escape_string($con, $_POST['name']);
+        $age = (int) $_POST['age'];
+        $mobile = mysqli_real_escape_string($con, $_POST['mobile']);
+        $email = mysqli_real_escape_string($con, $_POST['email']);
+        $gender = mysqli_real_escape_string($con, $_POST['gender']);
+        $desc = mysqli_real_escape_string($con, $_POST['desc']);
+
+        // Insert query (serial auto-increments)
+        $sql = "INSERT INTO `form` (`name`, `age`, `mobile no.`, `email`, `gender`, `info`, `date`) 
+                VALUES ('$name', '$age', '$mobile', '$email', '$gender', '$desc', current_timestamp())";
+
+        if ($con->query($sql) === TRUE) {
+            echo "<p style='color:green;'>Successfully inserted!</p>";
+        } else {
+            echo "ERROR: $sql <br> " . $con->error;
+        }
+
+        $con->close();
+    }
+    ?>
+    </div>
 </body>
 </html>
