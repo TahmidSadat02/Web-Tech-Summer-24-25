@@ -61,7 +61,8 @@
                 VALUES ('$name', '$age', '$mobile', '$email', '$gender', '$desc', current_timestamp())";
 
         if ($con->query($sql) === TRUE) {
-            echo "<p style='color:green;'>Successfully inserted!</p>";
+            header("Location: display.php?msg=success");
+            exit();
         } else {
             echo "ERROR: $sql <br> " . $con->error;
         }
